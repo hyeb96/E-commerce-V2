@@ -41,9 +41,9 @@ const Contact = () => {
             errors.email = "This is not a valid email format!";
         }
         if (!values.message) {
-            errors.message = "Password is required!";
+            errors.message = "Message is required!";
         } else if (values.message.length > 255) {
-            errors.message = "Message must exceed 255 characters";
+            errors.message = "Message must not exceed 255 characters";
         }
         return errors;
     };

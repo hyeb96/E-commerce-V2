@@ -16,7 +16,7 @@ const ProductCards = () => {
 
     const loadData = async () => {
         return await axios
-            .get('/products')
+            .get('https://e-commerce-v2-react.herokuapp.com/products')
             .then((response) => setData(response.data))
             .catch((err) => console.log(err))
     };
@@ -24,7 +24,7 @@ const ProductCards = () => {
 
     const handleFilter = async (value) => {
         return await axios
-            .get(`/products/category=${value}`)
+            .get(`https://e-commerce-v2-react.herokuapp.com/products/category=${value}`)
             .then((response) => {
                 setData(response.data)
             })
@@ -33,9 +33,13 @@ const ProductCards = () => {
 
     return (
         <>
-            <button onClick={() => handleFilter('accessory')}>Accessory</button>
-            <button onClick={() => handleFilter('stationary')}>Stationary</button>
-            <button onClick={() => handleFilter('plants')}>Plants</button>
+            <div className='filter'>
+                {/* <button onClick={() => handleFilter('all')}>All</button> */}
+                <button onClick={() => handleFilter('accessory')}>Accessory</button>
+                <button onClick={() => handleFilter('stationary')}>Stationary</button>
+                <button onClick={() => handleFilter('plants')}>Plants</button>
+            </div>
+
             {data.map((item, index) => {
                 return (
                     <>
