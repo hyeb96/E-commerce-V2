@@ -1,0 +1,23 @@
+.cards {
+    width: 500px;
+    height: auto;
+    display: inline-block;
+    margin: 30px;
+}
+
+/* .items {
+    display: flex;
+    flex-direction: column;
+} */
+
+.title {
+    padding: 20px;
+}
+
+span {
+    display: block;
+}
+
+img {
+    width: 300px;
+}

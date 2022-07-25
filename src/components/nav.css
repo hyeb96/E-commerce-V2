@@ -1,0 +1,19 @@
+.logo {
+    width: 20vw;
+}
+
+nav {
+    background-color: #FFEFE5;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    list-style-type: none;
+}
+
+a:link {
+    text-decoration: none;
+    padding: 30px;
+}

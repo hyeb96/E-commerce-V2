@@ -1,0 +1,70 @@
+.submit-message {
+    padding: 50px;
+    font-size: 50px;
+}
+
+form {
+    max-width: 550px;
+    width: 90%;
+    background: #D9D9D9;
+    margin: 13vh auto 0 auto;
+    padding: 30px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 17vh;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+
+}
+
+h2 {
+    margin: 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    padding-top: 30px;
+}
+
+label {
+    display: block;
+    margin: 20 px o;
+
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid rgb(11, 11, 11);
+
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-bottom: 1px solid red;
+
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    background: pink;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: white;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.2);
+
+}
