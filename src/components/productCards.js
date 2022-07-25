@@ -47,6 +47,7 @@ const ProductCards = () => {
                             <div className='items'></div>
                             <h1 className='title'>{item.name}</h1>
                             <img src={item.image}></img>
+                            <div>{item.image}</div>
                             <span>${item.price}</span>
                             <p className='item-description'>{item.description}</p>
                         </div>
