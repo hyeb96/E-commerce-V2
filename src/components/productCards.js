@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Products.css';
 
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+
 
 const ProductCards = () => {
     const [data, setData] = useState([])
@@ -39,20 +44,29 @@ const ProductCards = () => {
                 <button onClick={() => handleFilter('stationary')}>Stationary</button>
                 <button onClick={() => handleFilter('plants')}>Plants</button>
             </div>
-
-            {data.map((item, index) => {
-                return (
-                    <>
-                        <div className='cards'>
-                            <div className='items'></div>
-                            <h1 className='title'>{item.name}</h1>
-                            <img src={item.image}></img>
-                            <span>${item.price}</span>
-                            <p className='item-description'>{item.description}</p>
-                        </div>
-                    </>
-                )
-            })}
+            <div class='container'>
+                <Row xs={1} md={3} className="g-4">
+                    {data.map((item, index) => {
+                        return (
+                            <>
+                                <Col>
+                                    <Card className='card'>
+                                        <Card.Body>
+                                            <Card.Title><h1 className='title'>{item.name}</h1></Card.Title>
+                                            <Card.Img variant="top" src={item.image} />
+                                            <Card.Text>
+                                                <h2 className='price'>${item.price}</h2>
+                                                <p className='item-description'>{item.description}</p>
+                                            </Card.Text>
+                                        </Card.Body>
+                                        <button id='cart-btn'>Add to cart</button>
+                                    </Card>
+                                </Col>
+                            </>
+                        )
+                    })}
+                </Row>
+            </div>
         </>
     );
 };

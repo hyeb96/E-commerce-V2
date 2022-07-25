@@ -17,3 +17,8 @@ a:link {
     text-decoration: none;
     padding: 30px;
 }
+
+/* visited link */
+a:visited {
+    color: black;
+}
