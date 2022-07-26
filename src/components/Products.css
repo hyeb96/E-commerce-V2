@@ -2,8 +2,16 @@
     padding: 50px;
 }
 
+.filter {
+    display: inline-block;
+}
+
+.filter-btn {
+    margin: 10px;
+}
+
 .title {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     color: pink;
 }

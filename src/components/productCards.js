@@ -36,14 +36,29 @@ const ProductCards = () => {
             .catch((err) => console.log(err))
     };
 
+    const handleReset = () => {
+        loadData();
+    };
+
+    // const handleSort = async (value) => {
+    //     return await axios
+    //         .get(`https://e-commerce-v2-react.herokuapp.com/products/sortBy=${value}`)
+    //         .then((response) => {
+    //             setData(response.data)
+    //         })
+    //         .catch((err) => console.log(err))
+    // }
+
     return (
         <>
             <div className='filter'>
-                {/* <button onClick={() => handleFilter('all')}>All</button> */}
-                <button onClick={() => handleFilter('accessory')}>Accessory</button>
-                <button onClick={() => handleFilter('stationary')}>Stationary</button>
-                <button onClick={() => handleFilter('plants')}>Plants</button>
+                <h3>Filter:</h3>
+                <button className='filter-btn' onClick={() => handleReset()}>All</button>
+                <button className='filter-btn' onClick={() => handleFilter('accessory')}>Accessory</button>
+                <button className='filter-btn' onClick={() => handleFilter('stationary')}>Stationary</button>
+                <button className='filter-btn' onClick={() => handleFilter('plants')}>Plants</button>
             </div>
+
             <div class='container'>
                 <Row xs={1} md={3} className="g-4">
                     {data.map((item, index) => {

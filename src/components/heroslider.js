@@ -10,36 +10,31 @@ const Heroslider = () => {
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg"
-                        alt="First slide"
+                        src="images/slider-image1.png"
+                        alt="Live Succulent Set"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Live Succulent Set</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg"
-                        alt="Second slide"
+                        src="images/slider-image2.png"
+                        alt="Cactus Pencil Holder"
                     />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Cactus Pencil Holder</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg"
-                        alt="Third slide"
+                        src="images/slider-image3.png"
+                        alt="Dry Erased Calendar Board"
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
+                        <h3>Calendar Board</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
