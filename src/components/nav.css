@@ -1,9 +1,16 @@
-.logo {
-    width: 20vw;
+#logo-image {
+    width: 17vw;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+
 }
 
 nav {
     background-color: #FFEFE5;
+    padding: 20px;
 }
 
 ul {

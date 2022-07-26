@@ -58,21 +58,21 @@ const Contact = () => {
             <form onSubmit={handleSubmit}>
                 <h2>Contact Us</h2>
                 {/* <label for="name">Name:</label> */}
-                <input type="text" name="firstName" placeholder='first name' value={formValues.firstName}
+                <input type="text" name="firstName" placeholder='First name' value={formValues.firstName}
                     onChange={handleChange}></input>
                 <p>{formErrors.firstName}</p>
 
-                <input type="text" name="lastName" placeholder='last name' value={formValues.lastName}
+                <input type="text" name="lastName" placeholder='Last name' value={formValues.lastName}
                     onChange={handleChange}></input>
                 <p>{formErrors.lastName}</p>
 
                 {/* <label for="email">Email:</label> */}
-                <input type="text" name="email" placeholder='email' value={formValues.email}
+                <input type="text" name="email" placeholder='Email' value={formValues.email}
                     onChange={handleChange}></input>
                 <p>{formErrors.email}</p>
 
                 {/* <label for="message">Message:</label> */}
-                <textarea name="message" placeholder='message' rows='6' value={formValues.message}
+                <textarea name="message" placeholder='Message' rows='6' value={formValues.message}
                     onChange={handleChange}></textarea>
                 <p>{formErrors.message}</p>
 

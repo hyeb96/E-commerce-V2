@@ -1,11 +1,10 @@
 import React from 'react'
-// import('./heroslider.css');
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-bootstrap'
 
 const Heroslider = () => {
     return (
-        <div>
+        <div id='carousel'>
             <Carousel>
                 <Carousel.Item interval={5000}>
                     <img

@@ -10,10 +10,6 @@ import Row from 'react-bootstrap/Row';
 
 const ProductCards = () => {
     const [data, setData] = useState([])
-    // const loadData = async () => {
-    //     const response = await axios.get('/products');
-    //     setData(response.data);
-    // };
 
     useEffect(() => {
         loadData();

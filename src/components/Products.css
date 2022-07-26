@@ -3,7 +3,13 @@
 }
 
 .filter {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.filter h3 {
+    padding: 15px;
 }
 
 .filter-btn {
