@@ -36,15 +36,6 @@ const ProductCards = () => {
         loadData();
     };
 
-    // const handleSort = async (value) => {
-    //     return await axios
-    //         .get(`https://e-commerce-v2-react.herokuapp.com/products/sortBy=${value}`)
-    //         .then((response) => {
-    //             setData(response.data)
-    //         })
-    //         .catch((err) => console.log(err))
-    // }
-
     return (
         <>
             <div className='filter'>

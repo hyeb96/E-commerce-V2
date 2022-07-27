@@ -1,5 +1,22 @@
 .about-us {
     color: pink;
     background-color: #FFEFE5;
-    padding: 20vh;
+    padding: 20px;
+}
+
+.inner {
+    background-color: white;
+    padding: 30px;
+}
+
+h1 {
+    padding: 30px;
+}
+
+.inner h3 {
+    color: pink;
+}
+
+img {
+    padding: 20px;
 }
