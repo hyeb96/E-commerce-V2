@@ -1,87 +1,89 @@
-
 import React, { useState, useEffect } from 'react';
 import './Contact.css';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from 'axios';
+
 
 const Contact = () => {
-
-    const initialValues = { firstName: "", lastName: "", email: "", message: "" };
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
+    const initialValues = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
+    const validationSchema = Yup.object().shape({
+        firstName: Yup.string().required("first name is required"),
+        lastName: Yup.string().required("last name is required"),
+        email: Yup.string().email().required("enter a valid email"),
+        message: Yup.string().max(255).required("message must not exceed 255 characters"),
+    });
+
+    // submitting info to mysql
+    const onSubmit = (data) => {
+        axios.post("e-commercev2-backend.herokuapp.com/create", data).then((response) => {
+            console.log("Success");
+            setIsSubmit(true);
+        })
+            .catch((error) => {
+                console.log(error.message);
+            })
     };
 
     useEffect(() => {
-        console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
+        if (isSubmit) {
+            console.log('true');
         }
-    }, [formErrors]);
-    const validate = (values) => {
-        const errors = {};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        if (!values.firstName) {
-            errors.firstName = "First name is required!";
-        }
-        if (!values.lastName) {
-            errors.lastName = "Last name is required!";
-        }
-        if (!values.email) {
-            errors.email = "Email is required!";
-        } else if (!regex.test(values.email)) {
-            errors.email = "This is not a valid email format!";
-        }
-        if (!values.message) {
-            errors.message = "Message is required!";
-        } else if (values.message.length > 255) {
-            errors.message = "Message must not exceed 255 characters";
-        }
-        return errors;
-    };
+    }, []);
+
 
     return (
         <>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <div className="submit-message">Submitted!</div>
-            ) : (
-                <div className='submit-message'>Send us a message!</div>
-            )}
-            <form onSubmit={handleSubmit}>
-                <h2>Contact Us</h2>
-                {/* <label for="name">Name:</label> */}
-                <input type="text" name="firstName" placeholder='First name' value={formValues.firstName}
-                    onChange={handleChange}></input>
-                <p>{formErrors.firstName}</p>
+            <section className='contact'>
+                <div className='container'>
+                    <div className='contact-form'>
+                        <Formik
+                            initialValues={initialValues}
+                            onSubmit={onSubmit}
+                            validationSchema={validationSchema}>
+                            <Form className="formContainer">
+                                <h1 className='contact-caption'>Get in touch!</h1>
+                                <label>First Name: </label>
+                                <Field className='input'
+                                    name="firstName"
+                                />
+                                <ErrorMessage className='error' name="firstName" component="span" />
+                                <label>Last Name: </label>
+                                <Field className='input'
+                                    name="lastName"
+                                />
+                                <ErrorMessage className='error' name="lastName" component="span" />
+                                <label>Email: </label>
+                                <Field className='input'
+                                    name="email"
+                                />
+                                <ErrorMessage className='error' name="email" component="span" />
+                                <label>Message: </label>
+                                <Field as='textarea' className='input' id='text-area'
+                                    name="message"
+                                />
+                                <ErrorMessage className='error' name="message" component="span" />
 
-                <input type="text" name="lastName" placeholder='Last name' value={formValues.lastName}
-                    onChange={handleChange}></input>
-                <p>{formErrors.lastName}</p>
+                                <button type="submit" onClick={onSubmit}>Send</button>
 
-                {/* <label for="email">Email:</label> */}
-                <input type="text" name="email" placeholder='Email' value={formValues.email}
-                    onChange={handleChange}></input>
-                <p>{formErrors.email}</p>
-
-                {/* <label for="message">Message:</label> */}
-                <textarea name="message" placeholder='Message' rows='6' value={formValues.message}
-                    onChange={handleChange}></textarea>
-                <p>{formErrors.message}</p>
-
-                <div className="center">
-                    <button id="submitBtn" type="submit">SEND</button>
+                                {isSubmit ? (
+                                    <div className="submit-message">Message sent!</div>
+                                ) : (
+                                    <div className='submit-message'></div>
+                                )}
+                            </Form>
+                        </Formik>
+                    </div>
                 </div>
-
-            </form>
-
+            </section>
         </>
     )
 };

@@ -9,7 +9,7 @@ const Heroslider = () => {
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="images/slider-image1.png"
+                        src="images/sliderimage1.png"
                         alt="Live Succulent Set"
                     />
                     <Carousel.Caption>
@@ -19,7 +19,7 @@ const Heroslider = () => {
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="images/slider-image2.png"
+                        src="images/sliderimage2.png"
                         alt="Cactus Pencil Holder"
                     />
                     <Carousel.Caption>
@@ -29,7 +29,7 @@ const Heroslider = () => {
                 <Carousel.Item interval={5000}>
                     <img
                         className="d-block w-100"
-                        src="images/slider-image3.png"
+                        src="images/sliderimage3.png"
                         alt="Dry Erased Calendar Board"
                     />
                     <Carousel.Caption>

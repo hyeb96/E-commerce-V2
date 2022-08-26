@@ -17,7 +17,7 @@ const ProductCards = () => {
 
     const loadData = async () => {
         return await axios
-            .get('https://e-commerce-v2-react.herokuapp.com/products')
+            .get('https://e-commercev2-backend.herokuapp.com/products')
             .then((response) => setData(response.data))
             .catch((err) => console.log(err))
     };
@@ -25,7 +25,7 @@ const ProductCards = () => {
 
     const handleFilter = async (value) => {
         return await axios
-            .get(`https://e-commerce-v2-react.herokuapp.com/products/category=${value}`)
+            .get(`https://e-commercev2-backend.herokuapp.com/products/category=${value}`)
             .then((response) => {
                 setData(response.data)
             })

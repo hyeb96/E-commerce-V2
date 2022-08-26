@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer>
             <span id='footer-logo'>
-                <img id='footer-image' src='images/logo.png' alt='footer logo'></img>
+                <img id='footer-image' src='images/logo4.png' alt='footer logo'></img>
             </span>
             <span id='contact'>
                 <p>(980)-319-7468</p>
