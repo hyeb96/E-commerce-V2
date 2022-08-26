@@ -24,7 +24,7 @@ const Contact = () => {
 
     // submitting info to mysql
     const onSubmit = (data) => {
-        axios.post("e-commercev2-backend.herokuapp.com/create", data).then((response) => {
+        axios.post("https://e-com-version2.herokuapp.com//create", data).then((response) => {
             console.log("Success");
             setIsSubmit(true);
         })
